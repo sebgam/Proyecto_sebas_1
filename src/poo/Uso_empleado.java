@@ -26,6 +26,8 @@ public class Uso_empleado {
 		
 		
 		System.out.println(jefa_finanzas.tomar_decisiones("dar mas dias de vacaiones a los empleados"));
+		
+		
 	
 		
 		for(Empleado e:mis_empleados){
