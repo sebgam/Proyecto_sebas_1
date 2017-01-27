@@ -19,11 +19,13 @@ public class Uso_empleado {
 		mis_empleados[3]=new Empleado("hola putos");
 		mis_empleados[4]= jefe_rrhh;//----------------------POLIMORFISMO (SUSTITUCION)-----------------
 		mis_empleados[5]= new jefatura("maria jefe", 60000, 2016, 05, 15);
-		
+				
 		jefatura jefa_finanzas =(jefatura) mis_empleados[5];
 		
 		jefa_finanzas.estableceIncentivo(55000);
 		
+		
+		System.out.println(jefa_finanzas.tomar_decisiones("dar mas dias de vacaiones a los empleados"));
 	
 		
 		for(Empleado e:mis_empleados){
@@ -31,6 +33,7 @@ public class Uso_empleado {
 		}
 	   	
 		
+		Arrays.sort(mis_empleados);
 		
 		for(Empleado j: mis_empleados){
 			System.out.println("Nombre: " + j.dime_nombre() + " Sueldo: " + j.dime_sueldo()+ " Fecha: " + 
@@ -44,7 +47,7 @@ public class Uso_empleado {
 
 
 
-class Empleado{
+class Empleado implements Comparable{
 	
 	
 	public Empleado(String nom,double sue, int agno, int mes, int dia){
@@ -86,6 +89,23 @@ class Empleado{
 			
 		}
 		
+		
+	public int 	compareTo(Object miObjeto){
+		
+		Empleado otroEmpleado = (Empleado) miObjeto;
+		
+		if(this.sueldo<otroEmpleado.sueldo){
+			return -1;
+		}
+		
+		if(this.sueldo> otroEmpleado.sueldo){
+			return 1;
+		}
+		
+		return 0;
+		
+	}
+		
 	private String nombre;
 	private double sueldo;
 	private Date altaContrato;
@@ -93,7 +113,7 @@ class Empleado{
 	}
 
 
- class jefatura extends Empleado{
+ class jefatura extends Empleado implements jefes{
 
 	public jefatura(String nom, int sue, int agno, int mes,int dia){//----------constructor
 		
@@ -103,6 +123,13 @@ class Empleado{
 		
 	}
 
+	public String tomar_decisiones(String decision){
+		return "un miembro de la direccion a tomado la decision de: " + decision;
+	}
+	
+	
+	
+	
 	public void estableceIncentivo(double b){//--------------settter
 		
 		incentivo =b;
@@ -117,6 +144,9 @@ class Empleado{
 		
 		
 	}
+	
+	
+	
 	
 	
 private double incentivo;
