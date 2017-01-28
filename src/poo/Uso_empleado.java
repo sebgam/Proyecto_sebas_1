@@ -1,5 +1,6 @@
 package poo;
 
+import java.security.spec.ECField;
 import java.util.*;
 
 public class Uso_empleado {
@@ -16,7 +17,7 @@ public class Uso_empleado {
 		mis_empleados[0]=new Empleado("juan", 85000, 1990, 11, 24);
 		mis_empleados[1]=new Empleado("ana ", 75000, 1995, 05, 26);//--------instancia objeto de la clase empleado--------------
 		mis_empleados[2]=new Empleado("sebas", 55000, 1950, 04, 21);
-		mis_empleados[3]=new Empleado("hola putos");
+		mis_empleados[3]=new Empleado("elver galarga");
 		mis_empleados[4]= jefe_rrhh;//----------------------POLIMORFISMO (SUSTITUCION)-----------------
 		mis_empleados[5]= new jefatura("maria jefe", 60000, 2016, 05, 15);
 				
@@ -28,7 +29,12 @@ public class Uso_empleado {
 		System.out.println(jefa_finanzas.tomar_decisiones("dar mas dias de vacaiones a los empleados"));
 		
 		
+		
+		System.out.println("el jefe " + jefa_finanzas.dime_nombre() + " tiene un bono de " + jefa_finanzas.establece_bonus(500));
 	
+		
+		System.out.println(mis_empleados[3].dime_nombre() + " tiene un bono de " + mis_empleados[3].establece_bonus(200));
+		
 		
 		for(Empleado e:mis_empleados){
 			e.sube_sueldo(5);
@@ -49,7 +55,9 @@ public class Uso_empleado {
 
 
 
-class Empleado implements Comparable{
+class Empleado implements Comparable,trabajadores{
+	
+	
 	
 	
 	public Empleado(String nom,double sue, int agno, int mes, int dia){
@@ -107,6 +115,13 @@ class Empleado implements Comparable{
 		return 0;
 		
 	}
+	
+	
+	public double establece_bonus(double gratificacion){
+		
+		return trabajadores.bonus_base+gratificacion;
+		
+	}
 		
 	private String nombre;
 	private double sueldo;
@@ -124,11 +139,19 @@ class Empleado implements Comparable{
 		
 		
 	}
+	
+	
 
 	public String tomar_decisiones(String decision){
 		return "un miembro de la direccion a tomado la decision de: " + decision;
 	}
 	
+	
+	public double establece_bonus(double gratificacion){
+		double prima = 2000;
+		return trabajadores.bonus_base + gratificacion + prima;
+				
+	}
 	
 	
 	
