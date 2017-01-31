@@ -40,6 +40,7 @@ public class uso_tallas {
 		
 		System.out.println("abreviatura= " + la_talla.dame_abreviatura());
 		
+		
 	}
 
 	
