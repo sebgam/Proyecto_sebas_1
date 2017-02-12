@@ -9,9 +9,6 @@ public class creando_marcos {
 
 		miMarco marco = new miMarco();
 		
-		marco.setVisible(true);
-
-		marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	
 		
@@ -24,11 +21,18 @@ class miMarco extends JFrame{
 	
 	public miMarco(){
 		
+		setVisible(true);
+
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
 		//setSize(500,300);
 		//setLocation(500,250);
 		setTitle("HOLA PUTOS");
 		
-		setBounds(500,300,250,250);
+		setBounds(500,300,550,250);
+		//setResizable(false);
+		//setExtendedState(6);
+		
 		
 	}
 	
