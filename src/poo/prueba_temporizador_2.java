@@ -44,6 +44,25 @@ class reloj{
 	
 	public void en_marcha(){
 		
+		//clae interna local
+		class damelahora2 implements ActionListener{
+			
+			public void actionPerformed(ActionEvent evento){
+				
+				Date ahora = new Date();
+				
+				System.out.println("te pongo la hora cada 3 segundos" + ahora);
+				
+				if(sonido){
+					Toolkit.getDefaultToolkit().beep();
+				}
+				
+			}
+			
+		}
+		
+		
+		// codigo de la clase
 		ActionListener oyente = new damelahora2();
 		
 		Timer mitemporizador= new Timer(intervalo, oyente);
@@ -58,21 +77,7 @@ class reloj{
 	private boolean sonido;
 	
 	
-	private class damelahora2 implements ActionListener{
-		
-		public void actionPerformed(ActionEvent evento){
-			
-			Date ahora = new Date();
-			
-			System.out.println("te pongo la hora cada 3 segundos" + ahora);
-			
-			if(sonido){
-				Toolkit.getDefaultToolkit().beep();
-			}
-			
-		}
-		
-	}
+	
 	
 }
 
