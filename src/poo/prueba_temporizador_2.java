@@ -16,9 +16,9 @@ public class prueba_temporizador_2 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-		reloj miReloj=new reloj(3000, true);
+		reloj miReloj=new reloj();
 		
-		miReloj.en_marcha();
+		miReloj.en_marcha(3000,true);
 		
 		JOptionPane.showMessageDialog(null, "pulsa aceptar para terminar");
 		
@@ -34,15 +34,10 @@ public class prueba_temporizador_2 {
 
 class reloj{
 	
-	public reloj(int intervalo,boolean sonido){
-		
-		this.intervalo= intervalo;
-		this.sonido =sonido;
-	
-	}
+
 	
 	
-	public void en_marcha(){
+	public void en_marcha(int intervalo,final boolean sonido){
 		
 		//clae interna local
 		class damelahora2 implements ActionListener{
@@ -72,9 +67,6 @@ class reloj{
 	}
 	
 	
-	
-	private int intervalo;
-	private boolean sonido;
 	
 	
 	
