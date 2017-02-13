@@ -1,6 +1,7 @@
 package graficos;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 
 import javax.swing.*;
@@ -15,7 +16,8 @@ public class creando_marco_centrado {
 		marco.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 	marco.setVisible(true);
-	marco.setTitle("MARCO CENTRADO");
+
+	
 	
 		
 	}
@@ -38,7 +40,11 @@ class marco_centrado extends JFrame{
 		
 		setLocation(anchopantalla/4, alturapantalla/4);
 		
+		setTitle("MARCO CENTRADO");
 		
+		 Image miicono = mipantalla.getImage("src/graficos/icono.png");
+		 
+		 setIconImage(miicono);
 		
 		
 		
