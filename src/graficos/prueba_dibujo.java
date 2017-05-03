@@ -1,5 +1,6 @@
 package graficos;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.geom.*;
@@ -48,14 +49,18 @@ class laminaDibujo extends JPanel{
 		Graphics2D g2=(Graphics2D) g;
 	     
 		Rectangle2D rectangulo = new Rectangle2D.Double(100,100,200,150);
+		
+		g2.setPaint(Color.BLUE);
 		 
-		g2.draw(rectangulo);
+		g2.fill(rectangulo);
 		
 		Ellipse2D elipse= new Ellipse2D.Double();
 		
 		elipse.setFrame(rectangulo);
 		
-		g2.draw(elipse);
+		g2.setPaint(new Color(0,140, 255));
+		
+		g2.fill(elipse);
 		
 		g2.draw(new Line2D.Double(100, 100, 300, 250));
 		
