@@ -58,6 +58,7 @@ class laminaDibujo extends JPanel{
 		
 		elipse.setFrame(rectangulo);
 		
+		
 		g2.setPaint(new Color(0,140, 255));
 		
 		g2.fill(elipse);
